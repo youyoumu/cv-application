@@ -27,7 +27,7 @@ function General({ editMode }) {
   }
   return (
     <div>
-      <div className="text-5xl font-bold mb-2">{name}</div>
+      <div className="text-5xl font-bold mb-2 py-2">{name}</div>
       <div className="grid grid-cols-2 justify-between">
         <div>{phoneNumber}</div>
         <div className="text-end">{email}</div>
