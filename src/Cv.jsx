@@ -1,8 +1,20 @@
+import General from './General'
+import { useState } from 'react'
+
 function Cv() {
+  const [editMode, setEditMode] = useState(false)
+
   return (
     <div>
-      <h1>Hello World</h1>
-      <button className="btn">Click me</button>
+      <div>
+        <General editMode={editMode} />
+      </div>
+      <input
+        type="checkbox"
+        className="toggle"
+        checked={editMode}
+        onChange={() => setEditMode(!editMode)}
+      />
     </div>
   )
 }
