@@ -1,4 +1,5 @@
 import General from './General'
+import Experience from './Experience'
 import { useState } from 'react'
 
 function Cv() {
@@ -17,6 +18,7 @@ function Cv() {
       </div>
       <div>
         <General editMode={editMode} />
+        <Experience editMode={editMode} />
       </div>
     </div>
   )
