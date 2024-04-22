@@ -22,9 +22,11 @@ function Experience({ editMode }) {
       <div className="text-3xl font-bold mb-2 underline">Experience</div>
       {renderExperienceItems}
       {editMode && (
-        <button className="btn" onClick={addNewExperienceItem}>
-          Add experience
-        </button>
+        <div className="w-full flex justify-end">
+          <button className="btn mt-4" onClick={addNewExperienceItem}>
+            Add experience
+          </button>
+        </div>
       )}
     </div>
   )

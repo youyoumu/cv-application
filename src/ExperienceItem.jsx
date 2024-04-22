@@ -2,9 +2,10 @@ import TextForm from './TextForm'
 import { useState } from 'react'
 
 function ExperienceItem({ editMode }) {
-  const [title, setTitle] = useState('Title')
-  const [company, setCompany] = useState('Company')
-  const [date, setDate] = useState('Date')
+  const [title, setTitle] = useState('Experience title')
+  const [company, setCompany] = useState('Company name')
+  const [date, setDate] = useState('1998 - 1999')
+  const [location, setLocation] = useState('Location')
   const [description, setDescription] = useState('Description')
 
   if (editMode) {
@@ -15,22 +16,32 @@ function ExperienceItem({ editMode }) {
           className="text-2xl"
           onChangeCallback={setTitle}
         />
-        <TextForm
-          text={company}
-          className="text-slate-500"
-          onChangeCallback={setCompany}
-        />
+        <div className="flex">
+          <TextForm
+            text={company}
+            className="text-slate-500"
+            onChangeCallback={setCompany}
+          />
+          <TextForm text={location} onChangeCallback={setLocation} />
+        </div>
         <TextForm text={date} onChangeCallback={setDate} />
-        <TextForm text={description} onChangeCallback={setDescription} />
+        <TextForm
+          text={description}
+          onChangeCallback={setDescription}
+          className="text-sm"
+        />
       </div>
     )
   } else {
     return (
       <div>
         <div className="text-2xl">{title}</div>
-        <div className="text-slate-500">{company}</div>
+        <div className="flex gap-3">
+          <div className="text-slate-500">{company}</div>
+          <div>{location}</div>
+        </div>
         <div>{date}</div>
-        <div>{description}</div>
+        <div className="text-sm">{description}</div>
       </div>
     )
   }
