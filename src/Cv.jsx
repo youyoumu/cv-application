@@ -2,7 +2,7 @@ function Cv() {
   return (
     <div>
       <h1>Hello World</h1>
-      <button className="">Click me</button>
+      <button className="btn">Click me</button>
     </div>
   )
 }
