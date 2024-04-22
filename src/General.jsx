@@ -10,12 +10,17 @@ function General({ editMode }) {
   if (editMode) {
     return (
       <div>
-        <div>
-          <TextForm text={name} onChangeCallback={setName} />
+        <div className="text-5xl font-bold mb-2">
+          <TextForm text={name} onChangeCallback={setName} height="h-12" />
         </div>
-        <div>
+        <div className="grid grid-cols-2 justify-between">
           <TextForm text={phoneNumber} onChangeCallback={setPhoneNumber} />
-          <TextForm text={email} onChangeCallback={setEmail} />
+          <TextForm
+            className="text-end"
+            text={email}
+            onChangeCallback={setEmail}
+            alignt="text-end"
+          />
           <TextForm text={address} onChangeCallback={setAddress} />
         </div>
       </div>
@@ -23,10 +28,10 @@ function General({ editMode }) {
   }
   return (
     <div>
-      <div>{name}</div>
-      <div>
+      <div className="text-5xl font-bold mb-2">{name}</div>
+      <div className="grid grid-cols-2 justify-between">
         <div>{phoneNumber}</div>
-        <div>{email}</div>
+        <div className="text-end">{email}</div>
         <div>{address}</div>
       </div>
     </div>

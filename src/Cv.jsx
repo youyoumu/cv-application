@@ -5,7 +5,7 @@ function Cv() {
   const [editMode, setEditMode] = useState(false)
 
   return (
-    <div>
+    <div className="bg-base-100 max-w-screen-md mx-auto p-16">
       <div>
         <General editMode={editMode} />
       </div>
