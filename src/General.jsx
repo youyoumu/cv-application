@@ -11,7 +11,7 @@ function General({ editMode }) {
     return (
       <div>
         <div className="text-5xl font-bold mb-2">
-          <TextForm text={name} onChangeCallback={setName} height="h-12" />
+          <TextForm text={name} onChangeCallback={setName} />
         </div>
         <div className="grid grid-cols-2 justify-between">
           <TextForm text={phoneNumber} onChangeCallback={setPhoneNumber} />
@@ -19,7 +19,6 @@ function General({ editMode }) {
             className="text-end"
             text={email}
             onChangeCallback={setEmail}
-            alignt="text-end"
           />
           <TextForm text={address} onChangeCallback={setAddress} />
         </div>
