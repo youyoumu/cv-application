@@ -9,6 +9,10 @@ function EducationItem({ editMode, isLastItem }) {
     ? ''
     : 'border-b-2 border-dashed border-slate-300'
 
+  const DateIcon = () => {
+    return <span className="material-symbols-outlined">calendar_month</span>
+  }
+
   if (editMode) {
     return (
       <div className={`${addBorder} mb-4 pb-2`}>
@@ -22,7 +26,7 @@ function EducationItem({ editMode, isLastItem }) {
           className="text-slate-500"
           onChangeCallback={setSchoolName}
         />
-        <TextForm text={date} onChangeCallback={setDate} />
+        <TextForm text={date} onChangeCallback={setDate} Icon={DateIcon} />
       </div>
     )
   } else {
@@ -30,7 +34,10 @@ function EducationItem({ editMode, isLastItem }) {
       <div className={`${addBorder} mb-4 pb-2`}>
         <div className="text-2xl">{title}</div>
         <div className="text-slate-500">{schoolName}</div>
-        <div>{date}</div>
+        <div className="text-sm flex items-center">
+          <DateIcon />
+          {date}
+        </div>
       </div>
     )
   }

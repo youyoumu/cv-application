@@ -11,6 +11,14 @@ function ExperienceItem({ editMode, isLastItem }) {
     ? ''
     : 'border-b-2 border-dashed border-slate-300'
 
+  const LocationIcon = () => {
+    return <span className="material-symbols-outlined">location_on</span>
+  }
+
+  const DateIcon = () => {
+    return <span className="material-symbols-outlined">calendar_month</span>
+  }
+
   if (editMode) {
     return (
       <div className={`${addBorder} mb-4 pb-2`}>
@@ -19,19 +27,23 @@ function ExperienceItem({ editMode, isLastItem }) {
           className="text-2xl"
           onChangeCallback={setTitle}
         />
-        <div className="flex">
+        <TextForm
+          text={company}
+          className="text-slate-500"
+          onChangeCallback={setCompany}
+        />
+        <div className="flex text-sm mb-2">
+          <TextForm text={date} onChangeCallback={setDate} Icon={DateIcon} />
           <TextForm
-            text={company}
-            className="text-slate-500"
-            onChangeCallback={setCompany}
+            text={location}
+            onChangeCallback={setLocation}
+            Icon={LocationIcon}
           />
-          <TextForm text={location} onChangeCallback={setLocation} />
         </div>
-        <TextForm text={date} onChangeCallback={setDate} />
         <TextForm
           text={description}
           onChangeCallback={setDescription}
-          className="text-sm"
+          className="text-xs"
         />
       </div>
     )
@@ -39,12 +51,18 @@ function ExperienceItem({ editMode, isLastItem }) {
     return (
       <div className={`${addBorder} mb-4 pb-2`}>
         <div className="text-2xl">{title}</div>
-        <div className="flex gap-3">
-          <div className="text-slate-500">{company}</div>
-          <div>{location}</div>
+        <div className="text-slate-500">{company}</div>
+        <div className="flex gap-3 text-sm mb-2">
+          <div className="flex items-center">
+            <DateIcon />
+            {date}
+          </div>
+          <div className="flex items-center">
+            <LocationIcon />
+            {location}
+          </div>
         </div>
-        <div>{date}</div>
-        <div className="text-sm">{description}</div>
+        <div className="text-xs">{description}</div>
       </div>
     )
   }
