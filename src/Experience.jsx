@@ -31,7 +31,7 @@ function Experience({ editMode }) {
       </div>
       <div className="pl-4">{renderExperienceItems}</div>
       {editMode && (
-        <div className="w-full flex justify-end">
+        <div className="w-full flex justify-center">
           <button className="btn mt-4" onClick={addNewExperienceItem}>
             Add experience
           </button>

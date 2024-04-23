@@ -31,7 +31,7 @@ function Education({ editMode }) {
       </div>
       <div className="pl-4">{renderEducationItems}</div>
       {editMode && (
-        <div className="w-full flex justify-end">
+        <div className="w-full flex justify-center">
           <button className="btn mt-4" onClick={addNewEducationItem}>
             Add education
           </button>
