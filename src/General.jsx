@@ -9,7 +9,7 @@ function General({ editMode }) {
 
   if (editMode) {
     return (
-      <div className="mb-2">
+      <div className="mb-8">
         <div className="text-5xl font-bold mb-2">
           <TextForm text={name} onChangeCallback={setName} />
         </div>
@@ -26,7 +26,7 @@ function General({ editMode }) {
     )
   }
   return (
-    <div className="mb-2">
+    <div className="mb-8">
       <div className="text-5xl font-bold mb-2 py-2">{name}</div>
       <div className="grid grid-cols-2 justify-between">
         <div>{phoneNumber}</div>

@@ -1487,6 +1487,10 @@ html {
   padding-bottom: 0.5rem;
 }
 
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .text-end {
   text-align: end;
 }
