@@ -8,13 +8,23 @@ function Education({ editMode }) {
     }
   ])
 
+  const deleteCallback = (id) => {
+    const NewEducationItems = [...EducationItems]
+    setEducationItems(NewEducationItems.filter((item) => item.id !== id))
+  }
+
   const renderEducationItems = EducationItems.map((item) => {
     const isLastItem = item === EducationItems[EducationItems.length - 1]
+    const isSingleItem = EducationItems.length === 1
+
     return (
       <EducationItem
         key={item.id}
         editMode={editMode}
         isLastItem={isLastItem}
+        deleteCallback={deleteCallback}
+        id={item.id}
+        isSingleItem={isSingleItem}
       />
     )
   })

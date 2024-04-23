@@ -8,13 +8,22 @@ function Experience({ editMode }) {
     }
   ])
 
+  const deleteCallback = (id) => {
+    const NewExperienceItems = [...ExperienceItems]
+    setExperienceItems(NewExperienceItems.filter((item) => item.id !== id))
+  }
+
   const renderExperienceItems = ExperienceItems.map((item) => {
     const isLastItem = item === ExperienceItems[ExperienceItems.length - 1]
+    const isSingleItem = ExperienceItems.length === 1
     return (
       <ExperienceItem
         key={item.id}
         editMode={editMode}
         isLastItem={isLastItem}
+        deleteCallback={deleteCallback}
+        id={item.id}
+        isSingleItem={isSingleItem}
       />
     )
   })
