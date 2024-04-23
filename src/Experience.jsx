@@ -18,7 +18,7 @@ function Experience({ editMode }) {
   }
 
   return (
-    <div>
+    <div className="mb-8">
       <div className="text-3xl font-bold mb-2 underline">Experience</div>
       {renderExperienceItems}
       {editMode && (

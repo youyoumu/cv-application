@@ -1,6 +1,7 @@
 import General from './General'
 import Experience from './Experience'
 import { useState } from 'react'
+import Education from './Education'
 
 function Cv() {
   const [editMode, setEditMode] = useState(false)
@@ -19,6 +20,7 @@ function Cv() {
       <div>
         <General editMode={editMode} />
         <Experience editMode={editMode} />
+        <Education editMode={editMode} />
       </div>
     </div>
   )
