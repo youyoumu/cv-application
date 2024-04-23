@@ -42,8 +42,11 @@ function Education({ editMode }) {
       <div className="pl-4">{renderEducationItems}</div>
       {editMode && (
         <div className="w-full flex justify-center">
-          <button className="btn mt-4" onClick={addNewEducationItem}>
-            Add education
+          <button
+            className="btn mt-4 btn-primary"
+            onClick={addNewEducationItem}
+          >
+            Add more education
           </button>
         </div>
       )}
