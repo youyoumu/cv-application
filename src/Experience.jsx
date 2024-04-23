@@ -19,7 +19,9 @@ function Experience({ editMode }) {
 
   return (
     <div className="mb-8">
-      <div className="text-3xl font-bold mb-2 underline">Experience</div>
+      <div className="text-3xl font-bold mb-2 border-b-2 border-black">
+        Experience
+      </div>
       {renderExperienceItems}
       {editMode && (
         <div className="w-full flex justify-end">

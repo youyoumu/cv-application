@@ -19,7 +19,9 @@ function Education({ editMode }) {
 
   return (
     <div>
-      <div className="text-3xl font-bold mb-2 underline">Education</div>
+      <div className="text-3xl font-bold mb-2 border-b-2 border-black">
+        Education
+      </div>
       {renderEducationItems}
       {editMode && (
         <div className="w-full flex justify-end">
