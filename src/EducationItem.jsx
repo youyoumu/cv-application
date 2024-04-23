@@ -1,14 +1,17 @@
 import TextForm from './TextForm'
 import { useState } from 'react'
 
-function EducationItem({ editMode }) {
+function EducationItem({ editMode, isLastItem }) {
   const [title, setTitle] = useState('Title of Study')
   const [schoolName, setSchoolName] = useState('School Name')
   const [date, setDate] = useState('1998 - 1999')
+  const addBorder = isLastItem
+    ? ''
+    : 'border-b-2 border-dashed border-slate-300'
 
   if (editMode) {
     return (
-      <div>
+      <div className={`${addBorder} mb-4 pb-2`}>
         <TextForm
           text={title}
           className="text-2xl"
@@ -24,7 +27,7 @@ function EducationItem({ editMode }) {
     )
   } else {
     return (
-      <div>
+      <div className={`${addBorder} mb-4 pb-2`}>
         <div className="text-2xl">{title}</div>
         <div className="text-slate-500">{schoolName}</div>
         <div>{date}</div>

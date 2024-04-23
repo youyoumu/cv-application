@@ -9,7 +9,14 @@ function Experience({ editMode }) {
   ])
 
   const renderExperienceItems = ExperienceItems.map((item) => {
-    return <ExperienceItem key={item.id} editMode={editMode} />
+    const isLastItem = item === ExperienceItems[ExperienceItems.length - 1]
+    return (
+      <ExperienceItem
+        key={item.id}
+        editMode={editMode}
+        isLastItem={isLastItem}
+      />
+    )
   })
 
   const addNewExperienceItem = () => {

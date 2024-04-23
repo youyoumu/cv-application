@@ -9,7 +9,14 @@ function Education({ editMode }) {
   ])
 
   const renderEducationItems = EducationItems.map((item) => {
-    return <EducationItem key={item.id} editMode={editMode} />
+    const isLastItem = item === EducationItems[EducationItems.length - 1]
+    return (
+      <EducationItem
+        key={item.id}
+        editMode={editMode}
+        isLastItem={isLastItem}
+      />
+    )
   })
 
   const addNewEducationItem = () => {

@@ -1,16 +1,19 @@
 import TextForm from './TextForm'
 import { useState } from 'react'
 
-function ExperienceItem({ editMode }) {
+function ExperienceItem({ editMode, isLastItem }) {
   const [title, setTitle] = useState('Experience title')
   const [company, setCompany] = useState('Company name')
   const [date, setDate] = useState('1998 - 1999')
   const [location, setLocation] = useState('Location')
   const [description, setDescription] = useState('Description')
+  const addBorder = isLastItem
+    ? ''
+    : 'border-b-2 border-dashed border-slate-300'
 
   if (editMode) {
     return (
-      <div>
+      <div className={`${addBorder} mb-4 pb-2`}>
         <TextForm
           text={title}
           className="text-2xl"
@@ -34,7 +37,7 @@ function ExperienceItem({ editMode }) {
     )
   } else {
     return (
-      <div>
+      <div className={`${addBorder} mb-4 pb-2`}>
         <div className="text-2xl">{title}</div>
         <div className="flex gap-3">
           <div className="text-slate-500">{company}</div>
