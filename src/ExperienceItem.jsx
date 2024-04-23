@@ -2,8 +2,8 @@ import TextForm from './TextForm'
 import { useState } from 'react'
 
 function ExperienceItem({ editMode, isLastItem }) {
-  const [title, setTitle] = useState('Experience title')
-  const [company, setCompany] = useState('Company name')
+  const [title, setTitle] = useState('Job Position')
+  const [company, setCompany] = useState('Company Name')
   const [date, setDate] = useState('1998 - 1999')
   const [location, setLocation] = useState('Location')
   const [description, setDescription] = useState('Description')
